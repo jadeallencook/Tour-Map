@@ -1,0 +1,51 @@
+[{
+    "city": "Tellus",
+    "state-abv": "EG",
+    "state-full": "Egestas",
+    "state-img": "http://via.placeholder.com/350x350",
+    "global-img": "http://via.placeholder.com/350x150",
+    "date": "Monday, April 1",
+    "description": "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "bullets": [
+        "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.",
+        "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ]
+}, {
+    "city": "Fermentum",
+    "state-abv": "EL",
+    "state-full": "Elit",
+    "state-img": "http://via.placeholder.com/350x350",
+    "global-img": "http://via.placeholder.com/350x150",
+    "date": "Tuesday, April 2",
+    "description": "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
+    "bullets": [
+        "Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui.",
+        "Etiam porta sem malesuada magna mollis euismod.",
+        "Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus."
+    ]
+}, {
+    "city": "Condimentum",
+    "state-abv": "SO",
+    "state-full": "Sollicitudin",
+    "state-img": "http://via.placeholder.com/350x350",
+    "global-img": "http://via.placeholder.com/350x150",
+    "date": "Wednesday, April 3",
+    "description": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.",
+    "bullets": [
+        "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
+        "Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla."
+    ]
+}, {
+    "city": "Ullamcorper",
+    "state-abv": "VU",
+    "state-full": "Vulputate",
+    "state-img": "http://via.placeholder.com/350x350",
+    "global-img": "http://via.placeholder.com/350x150",
+    "date": "Thursday, April 1",
+    "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur.",
+    "bullets": [
+        "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue.",
+        "Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
+        "Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna."
+    ]
+}]
