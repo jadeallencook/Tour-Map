@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Document</title>
+    <title>Tour Map</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://www.deseretnews.com/v4/dist/app.css" />
 </head>
+
 <body>
-    <div class="map-tour-container"></div>
+    <div class="map-tour-container">
+        <div id="loading">Loading tour...</div>
+        <div id="menu">
+            <img src="http://via.placeholder.com/300x150" id="main-map" />
+            <div id="locations-container"></div>
+            <div id="menu-footer">Developed by Jade Allen Cook for
+                <a href="http://www.deseretnews.com/">Deseret News</a>
+            </div>
+        </div>
+        <div id="location">
+            <span id="close">X</span>
+            <img src="" id="single-state" />
+            <span id="state-label"></span>
+            <span id="date-label"></span>
+            <span id="location-description"></span>
+            <ul id="location-bullets"></ul>
+            <div id="page-changer">
+                <div id="last">◀</div>
+                <div id="next">▶</div>
+            </div>
+        </div>
+    </div>
 </body>
-    <script src="app.js"></script>
+<script src="app.js"></script>
+
 </html>

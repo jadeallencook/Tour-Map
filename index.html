@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tour Map</title>
+    <style>@charset "UTF-8";html,body {margin: 0px;padding: 0px;overflow: hidden;}div.map-tour-container::-webkit-scrollbar {width: 0px;background: transparent;}div.map-tour-container {height: 500px;border: solid thin grey;width: 350px;margin: 25px;position: relative;overflow-x: hidden;overflow-y: scroll;}div.map-tour-container div#loading {position: absolute;margin-top: 225px;width: 100%;}div.map-tour-container div#menu {display: none;}div.map-tour-container div#menu div#menu-footer {position: absolute;bottom: 5px;font-size: 0.5em;text-align: center;width: 100%;}div.map-tour-container div#menu div#menu-footer a {color: cornflowerblue;}div.map-tour-container div#menu img#main-map {margin-top: 25px;}div.map-tour-container div#menu div#locations-container {margin-top: 15px;}div.map-tour-container div#menu div#locations-container div.location-label {width: 45%;display: inline-block;border: solid thin grey;border-bottom: none;padding: 5px 0px;font-weight: bold;cursor: pointer;overflow: hidden;white-space: nowrap;margin-bottom: -5px;}div.map-tour-container div#menu div#locations-container div.location-label:nth-child(odd) {border-right: none;}div.map-tour-container div#menu div#locations-container div.location-label:nth-last-of-type(-n+2) {border-bottom: solid thin grey;}div.map-tour-container div#menu div#locations-container div.location-label:hover {color: lightgray;}div.map-tour-container div#location {display: none;}div.map-tour-container div#location span#close {position: absolute;top: 5px;right: 10px;cursor: pointer;}div.map-tour-container div#location span#close:hover {opacity: 0.5;}div.map-tour-container div#location img#single-state {width: 80%;margin-top: 15px;}div.map-tour-container div#location span {display: block;}div.map-tour-container div#location span#state-label {font-size: 1.25em;font-weight: bold;margin-top: 15px;}div.map-tour-container div#location span#location-description {text-align: left;margin: 15px;}div.map-tour-container div#location ul#location-bullets {text-align: left;font-weight: bold;margin-left: 20px;margin-bottom: 50px;}div.map-tour-container div#location ul#location-bullets li {margin: 15px;}div.map-tour-container div#location ul#location-bullets li::before {content: "■";color: darkred;display: inline-block;width: 1em;margin-left: -1em;}div.map-tour-container div#location div#page-changer {width: 100%;position: absolute;bottom: 0px;background: -moz-linear-gradient(top, rgba(0, 71, 153, 0) 0%, white 36%, white 100%);background: -webkit-linear-gradient(top, rgba(0, 71, 153, 0) 0%, white 36%, white 100%);background: linear-gradient(to bottom, rgba(0, 71, 153, 0) 0%, white 36%, white 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00004799', endColorstr='#ffffff', GradientType=0);-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}div.map-tour-container div#location div#page-changer div {display: inline-block;cursor: pointer;margin: 0px 25px;padding: 25px 0px 5px 0px;}div.map-tour-container div#location div#page-changer div:hover {opacity: 0.5;}</style>
+    <link rel="stylesheet" href="https://www.deseretnews.com/v4/dist/app.css" />
+</head>
+
+<body>
+    <div class="map-tour-container">
+        <div id="loading">Loading tour...</div>
+        <div id="menu">
+            <img src="http://via.placeholder.com/300x150" id="main-map" />
+            <div id="locations-container"></div>
+            <div id="menu-footer">Developed by Jade Allen Cook for
+                <a href="http://www.deseretnews.com/">Deseret News</a>
+            </div>
+        </div>
+        <div id="location">
+            <span id="close">X</span>
+            <img src="" id="single-state" />
+            <span id="state-label"></span>
+            <span id="date-label"></span>
+            <span id="location-description"></span>
+            <ul id="location-bullets"></ul>
+            <div id="page-changer">
+                <div id="last">◀</div>
+                <div id="next">▶</div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>(function () {
+ var tour = null;
+ var loading = {
+ hide: function () {
+ document.getElementById('loading').style.display = 'none';
+ }
+ }
+ var menu = {
+ load: function () {
+ var locations = document.getElementById('locations-container');
+ locations.innerHTML = null;
+ for (var x = 0; x < tour.length; x++) {
+ var elem = document.createElement('div');
+ elem.classList.add('location-label');
+ elem.innerText = tour[x].city;
+ if (tour[x].state_abv.length > 0) elem.innerText += ', ' + tour[x].state_abv;
+ elem.setAttribute('data-num', x);
+ elem.onclick = function () {
+ details.show(this.getAttribute('data-num'));
+ }
+ locations.appendChild(elem);
+ }
+ },
+ show: function () {
+ document.getElementById('menu').style.display = 'block';
+ },
+ hide: function () {
+ document.getElementById('menu').style.display = 'none';
+ }
+ }
+ var details = {
+ current: 0,
+ show: function (num) {
+ num = parseInt(num);
+ details.current = num;
+ var location = tour[num];
+ document.getElementById('close').onclick = function () {
+ details.hide();
+ menu.show();
+ }
+ document.getElementById('single-state').setAttribute('src', location.state_img);
+ document.getElementById('state-label').innerText = location.city;
+ if (location.state_full.length > 0) document.getElementById('state-label').innerText += ', ' + location.state_full;
+ document.getElementById('date-label').innerText = location.date;
+ document.getElementById('location-description').innerText = location.description;
+ var list = document.getElementById('location-bullets');
+ list.innerHTML = null;
+ for (var x = 0; x < location.bullets.length; x++) {
+ var text = location.bullets[x];
+ var bullet = document.createElement('li');
+ bullet.innerText = text;
+ list.appendChild(bullet);
+ }
+ document.querySelector('div.map-tour-container').onscroll = function (e) {
+ var scroll = 0 - e.target.scrollTop;
+ document.getElementById('page-changer').style.bottom = scroll + 'px';
+ }
+ document.getElementById('next').onclick = function () {
+ if (details.current < tour.length - 1) details.current++;
+ else details.current = 0;
+ details.show(details.current);
+ }
+ document.getElementById('last').onclick = function () {
+ if (details.current === 0) details.current = tour.length - 1;
+ else details.current--;
+ details.show(details.current);
+ }
+ menu.hide();
+ document.getElementById('location').style.display = 'block';
+ },
+ hide: function () {
+ document.getElementById('location').style.display = 'none';
+ }
+ }
+ new Promise(function (res, rej) {
+ var request = new XMLHttpRequest();
+ request.onload = function (e) {
+ tour = JSON.parse(e.target.response);
+ if (tour) res();
+ else rej();
+ }
+ request.open('get', 'dev/tour.json');
+ request.send();
+ }).then(function () {
+ menu.load();
+ loading.hide();
+ menu.show();
+ }).catch(function () {
+ console.log('error');
+ });
+})();</script>
+
+</html>

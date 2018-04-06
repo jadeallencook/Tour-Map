@@ -3,7 +3,7 @@
 $app = "index.html";
 $js = ["app.js"];
 $css = ["style.css"];
-$file = "../index.embed.html";
+$file = "../index.html";
 
 // get init html
 $html = file_get_contents($app);
