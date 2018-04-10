@@ -25,6 +25,18 @@ div.map-tour-container {
     }
     div#menu {
         display: none;
+        table#map {
+            overflow: hidden;
+            height: 151px;
+            width: 300px;
+            display: block;
+            margin: 0px auto;
+        }
+        table#map * {
+            vertical-align: top;
+            margin: 0px;
+            padding: 0px;
+        }
         div#menu-footer {
             position: absolute;
             bottom: 5px;
@@ -39,32 +51,47 @@ div.map-tour-container {
             margin-top: 25px;
         }
         div#locations-container {
-            margin-top: 15px;
+            margin-top: 50px;
             div.location-label {
-                width: 45%;
+                width: 35%;
                 display: inline-block;
-                border: solid thin grey;
                 border-bottom: none;
                 padding: 5px 0px;
                 font-weight: bold;
+                font-size: 0.75em;
                 cursor: pointer;
-                overflow: hidden;
                 white-space: nowrap;
-                margin-bottom: -5px;
+                background-color: #E0E7EE;
+                position: relative;
+                color: #000;
+                margin-bottom: 25px;
             }
             div.location-label:nth-child(odd) {
-                border-right: none;
+                margin-right: 25px;
             }
-            div.location-label:nth-last-of-type(-n+2) {
-                border-bottom: solid thin grey;
+            div.location-label:after {
+                content: "";
+                position: absolute;
+                left: 100%;
+                top: 0px;
+                width: 0px;
+                height: 0px;
+                border-top: 13px solid transparent;
+                border-left: 15px solid #E0E7EE;
+                border-bottom: 15px solid transparent;
             }
             div.location-label:hover {
-                color: lightgray;
+                opacity: 0.5;
             }
         }
     }
     div#location {
         display: none;
+        background-color: #E0E7EE;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
         span#close {
             position: absolute;
             top: 5px;
@@ -75,8 +102,9 @@ div.map-tour-container {
             opacity: 0.5;
         }
         img#single-state {
-            width: 80%;
+            max-width: 85%;
             margin-top: 15px;
+            max-height: 150px;
         }
         span {
             display: block;
@@ -100,7 +128,7 @@ div.map-tour-container {
             }
             li::before {
                 content: "■";
-                color: darkred;
+                color: #A73732;
                 display: inline-block;
                 width: 1em;
                 margin-left: -1em
@@ -110,10 +138,7 @@ div.map-tour-container {
             width: 100%;
             position: absolute;
             bottom: 0px;
-            background: -moz-linear-gradient(top, rgba(0, 71, 153, 0) 0%, rgba(255, 255, 255, 1) 36%, rgba(255, 255, 255, 1) 100%);
-            background: -webkit-linear-gradient(top, rgba(0, 71, 153, 0) 0%, rgba(255, 255, 255, 1) 36%, rgba(255, 255, 255, 1) 100%);
-            background: linear-gradient(to bottom, rgba(0, 71, 153, 0) 0%, rgba(255, 255, 255, 1) 36%, rgba(255, 255, 255, 1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00004799', endColorstr='#ffffff', GradientType=0);
+            background-color: #E0E7EE;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
@@ -124,7 +149,7 @@ div.map-tour-container {
                 display: inline-block;
                 cursor: pointer;
                 margin: 0px 25px;
-                padding: 25px 0px 5px 0px;
+                padding: 5px 0px 5px 0px;
             }
             div:hover {
                 opacity: 0.5;

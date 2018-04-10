@@ -1,47 +1,89 @@
 [{
-    "city": "Tellus",
-    "state_abv": "EG",
-    "state_full": "Egestas",
-    "state_img": "http://via.placeholder.com/350x250",
+    "city": "London",
+    "state_abv": "UK",
+    "state_full": "United Kingdom",
+    "state_img": "images/united-kingdom.png",
     "date": "Monday, April 1",
-    "description": "Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+    "description": "Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Nulla vitae elit libero, a pharetra augue. Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
     "bullets": [
-        "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.",
-        "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "Test 1",
+        "Test 2"
     ]
 }, {
-    "city": "Fermentum",
+    "city": "Jerusalem",
+    "state_abv": "IL",
+    "state_full": "Israel",
+    "state_img": "images/israel.png",
+    "date": "Monday, April 1",
+    "description": "Test Description",
+    "bullets": [
+        "Test 1",
+        "Test 2"
+    ]
+}, {
+    "city": "Nairobi",
+    "state_abv": "KE",
+    "state_full": "Kenya",
+    "state_img": "images/kenya.png",
+    "date": "Monday, April 1",
+    "description": "Test Description",
+    "bullets": [
+        "Test 1",
+        "Test 2"
+    ]
+}, {
+    "city": "Harare",
+    "state_abv": "ZI",
+    "state_full": "Zimbabwe",
+    "state_img": "images/zimbabew.png",
+    "date": "Monday, April 1",
+    "description": "Test Description",
+    "bullets": [
+        "Test 1",
+        "Test 2"
+    ]
+}, {
+    "city": "Bengaluru",
+    "state_abv": "IN",
+    "state_full": "India",
+    "state_img": "images/india.png",
+    "date": "Monday, April 1",
+    "description": "Test Description",
+    "bullets": [
+        "Test 1",
+        "Test 2"
+    ]
+}, {
+    "city": "Bangkok",
+    "state_abv": "TH",
+    "state_full": "Thailand",
+    "state_img": "images/thailand.png",
+    "date": "Monday, April 1",
+    "description": "Test Description",
+    "bullets": [
+        "Test 1",
+        "Test 2"
+    ]
+}, {
+    "city": "Hong Kong",
     "state_abv": "",
-    "state_full": "Elit",
-    "state_img": "http://via.placeholder.com/350x250",
-    "date": "Tuesday, April 2",
-    "description": "Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. ",
+    "state_full": "",
+    "state_img": "images/hong-kong.png",
+    "date": "Monday, April 1",
+    "description": "Test Description",
     "bullets": [
-        "Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui.",
-        "Etiam porta sem malesuada magna mollis euismod.",
-        "Etiam porta sem malesuada magna mollis euismod. Donec id elit non mi porta gravida at eget metus."
+        "Test 1",
+        "Test 2"
     ]
 }, {
-    "city": "Condimen",
-    "state_abv": "SO",
-    "state_full": "Sollicitudin",
-    "state_img": "http://via.placeholder.com/350x250",
-    "date": "Wednesday, April 3",
-    "description": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.",
+    "city": "Honolulu",
+    "state_abv": "US",
+    "state_full": "Hawaii, US",
+    "state_img": "images/hawaii.png",
+    "date": "Monday, April 1",
+    "description": "Test Description",
     "bullets": [
-        "Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras justo odio, dapibus ac facilisis in, egestas eget quam.",
-        "Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla."
-    ]
-}, {
-    "city": "Ullamcorp",
-    "state_abv": "VU",
-    "state_full": "Vulputate",
-    "state_img": "http://via.placeholder.com/350x250",
-    "date": "Thursday, April 1",
-    "description": "Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "bullets": [
-        "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero, a pharetra augue.",
-        "Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
-        "Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna."
+        "Test 1",
+        "Test 2"
     ]
 }]

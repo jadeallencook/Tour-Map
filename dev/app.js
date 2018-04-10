@@ -28,6 +28,16 @@
         },
         hide: function () {
             document.getElementById('menu').style.display = 'none';
+        },
+        map: function() {
+            var areas = document.querySelectorAll('map area');
+            for (var x = 0; x < areas.length; x++) {
+                var area = areas[x];
+                area.onclick = function() {
+                    var num = parseInt(this.getAttribute('data-num'));
+                    details.show(num);
+                }
+            }
         }
     }
 
@@ -54,7 +64,7 @@
                 bullet.innerText = text;
                 list.appendChild(bullet);
             }
-            document.querySelector('div.map-tour-container').onscroll = function (e) {
+            document.querySelector('div#location').onscroll = function (e) {
                 var scroll = 0 - e.target.scrollTop;
                 document.getElementById('page-changer').style.bottom = scroll + 'px';
             }
@@ -89,6 +99,7 @@
         menu.load();
         loading.hide();
         menu.show();
+        menu.map();
     }).catch(function () {
         console.log('error');
     });

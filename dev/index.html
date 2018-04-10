@@ -5,13 +5,24 @@
     <title>Tour Map</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://www.deseretnews.com/v4/dist/app.css" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
 </head>
 
 <body>
     <div class="map-tour-container">
         <div id="loading">Loading tour...</div>
         <div id="menu">
-            <img src="http://via.placeholder.com/300x150" id="main-map" />
+            <img src="images/map.png" id="main-map" usemap="#image-map" />
+            <map name="image-map">
+                <area data-num="7" alt="Honolulu, Hawaii" title="Honolulu, Hawaii" coords="15,77,9" shape="circle">
+                <area data-num="0" alt="London, United Kingdom" title="London, United Kingdom" coords="138,46,9" shape="circle">
+                <area data-num="1" alt="Jerusalem, Israel" title="Jerusalem, Israel" coords="168,69,10" shape="circle">
+                <area data-num="2" alt="Nairobi, Kenya" title="Nairobi, Kenya" coords="169,94,8" shape="circle">
+                <area data-num="3" alt="Harare, Zimbabwe" title="Harare, Zimbabwe" coords="166,110,8" shape="circle">
+                <area data-num="4" alt="Bengaluru, India" title="Bengaluru, India" coords="202,82,11" shape="circle">
+                <area data-num="5" alt="Bangkok, Thailand" title="Bangkok, Thailand" coords="220,84,8" shape="circle">
+                <area data-num="6" alt="Hong Kong" title="Hong Kong" coords="232,75,7" shape="circle">
+            </map>
             <div id="locations-container"></div>
             <div id="menu-footer">Developed by Jade Allen Cook for
                 <a href="http://www.deseretnews.com/">Deseret News</a>
