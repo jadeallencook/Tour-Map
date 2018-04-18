@@ -1,4 +1,7 @@
 (function () {
+
+    if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Article', window.location.href);
+
     var tour = null;
 
     var loading = {
@@ -18,7 +21,9 @@
                 if (tour[x].state_abv.length > 0) elem.innerText += ', ' + tour[x].state_abv;
                 elem.setAttribute('data-num', x);
                 elem.onclick = function () {
-                    details.show(this.getAttribute('data-num'));
+                    var num = parseInt(this.getAttribute('data-num'));
+                    if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Location Label', tour[num].state_full);
+                    details.show(num);
                 }
                 locations.appendChild(elem);
             }
@@ -35,6 +40,7 @@
                 var area = areas[x];
                 area.onclick = function () {
                     var num = parseInt(this.getAttribute('data-num'));
+                    if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Map Location', tour[num].state_full);
                     details.show(num);
                 }
             }
@@ -49,6 +55,7 @@
             var location = tour[num];
             document.getElementById('location').scrollTop = 0;
             document.getElementById('close').onclick = function () {
+                if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Navigation', 'Close');
                 details.hide();
                 menu.show();
             }
@@ -68,6 +75,9 @@
                     link.setAttribute('href', href);
                     link.setAttribute('target', '_blank');
                     link.innerText = text;
+                    link.onclick = function() {
+                        if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Bullet Link', text);
+                    }
                     bullet.appendChild(link);
                 } else {
                     bullet.innerHTML = text;
@@ -79,6 +89,7 @@
                 document.getElementById('page-changer').style.bottom = scroll + 'px';
             }
             document.getElementById('next').onclick = function () {
+                if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Navigation', 'Next');
                 if (details.current < tour.length - 1) {
                     details.current++;
                     details.show(details.current);
@@ -88,6 +99,7 @@
                 }
             }
             document.getElementById('last').onclick = function () {
+                if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Navigation', 'Previous');
                 if (details.current === 0) {
                     details.hide();
                     menu.show();

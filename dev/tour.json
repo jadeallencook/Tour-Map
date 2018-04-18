@@ -2,7 +2,7 @@
     "city": "London",
     "state_abv": "UK",
     "state_full": "United Kingdom",
-    "state_img": "images/united-kingdom.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/united-kingdom.png",
     "date": "Thursday, April 12",
     "description": "President Nelson said he chose London as the starting point of his global tour because of its international diversity. \"It's a melting pot, and ours is a global ministry, so at least we can get a sample,\" he said. \"Most of the nations of the world are here in London.\"",
     "bullets": [{
@@ -22,7 +22,7 @@
     "city": "Jerusalem",
     "state_abv": "IL",
     "state_full": "Israel",
-    "state_img": "images/israel.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/israel.png",
     "date": "Saturday, April 14",
     "description": "Cutting his stay in Jerusalem short as a result of rising tensions in in the Middle East, President Nelson left the central location of his global ministry tour following conference sessions at the BYU Jerusalem Center.",
     "bullets": [{
@@ -36,7 +36,7 @@
     "city": "Nairobi",
     "state_abv": "KE",
     "state_full": "Kenya",
-    "state_img": "images/kenya.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/kenya.png",
     "date": "Monday, April 16",
     "description": "East African Mormons traveled hundreds of miles in dust covered busses to hear President Nelsons voice in person. They received messages tailored for eastern Africa as the prophet addressed issues such as the practice of dowry.",
     "bullets": [{
@@ -50,7 +50,7 @@
     "city": "Harare",
     "state_abv": "ZI",
     "state_full": "Zimbabwe",
-    "state_img": "images/zimbabew.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/zimbabew.png",
     "date": "Tuesday, April 17",
     "description": "President Nelson follows in the footsteps of President Gordon B. Hinckley's 1998 tour as he travels to South Africa to speaks to members in Harare.",
     "bullets": []
@@ -58,7 +58,7 @@
     "city": "Bengaluru",
     "state_abv": "IN",
     "state_full": "India",
-    "state_img": "images/india.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/india.png",
     "date": "Thursday, April 19",
     "description": "After announcing a temple in Bengaluru, India, President Nelson will travel to the city and meet with members of the church in that area.",
     "bullets": []
@@ -66,7 +66,7 @@
     "city": "Bangkok",
     "state_abv": "TH",
     "state_full": "Thailand",
-    "state_img": "images/thailand.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/thailand.png",
     "date": "Friday, April 20",
     "description": "President Nelson will speak to saints in Thailand, who have grown from just over 1000 members in 1973 when the first Thailand mission was organized, to now almost 21,000 members.",
     "bullets": []
@@ -74,7 +74,7 @@
     "city": "Hong Kong",
     "state_abv": "",
     "state_full": "",
-    "state_img": "images/hong-kong.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/hong-kong.png",
     "date": "Saturday, April 21",
     "description": "Home to one temple and about 25,000 members, Hong Kong is second to last on President Nelson's tour.",
     "bullets": []
@@ -82,7 +82,7 @@
     "city": "Honolulu",
     "state_abv": "US",
     "state_full": "Hawaii, US",
-    "state_img": "images/hawaii.png",
+    "state_img": "https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/hawaii.png",
     "date": "Sunday, April 22",
     "description": "President Nelson will speak to members and students at Brigham Young University-Hawaii. This is his last stop on his world tour.",
     "bullets": []

@@ -7,16 +7,18 @@ div.map-tour-container {
   height: 500px;
   border: solid thin grey;
   width: 350px;
-  margin: 25px;
+  margin: 25px 25px 25px 0px;
   position: relative;
   overflow-x: hidden;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  float: left; }
   div.map-tour-container div#loading {
     position: absolute;
     margin-top: 225px;
     width: 100%; }
   div.map-tour-container div#menu {
-    display: none; }
+    display: none;
+    text-align: center; }
     div.map-tour-container div#menu table#map {
       overflow: hidden;
       height: 151px;
@@ -68,6 +70,7 @@ div.map-tour-container {
         opacity: 0.5; }
   div.map-tour-container div#location {
     display: none;
+    text-align: center;
     background-color: #E0E7EE;
     position: absolute;
     height: 100%;
@@ -100,6 +103,8 @@ div.map-tour-container {
       margin-bottom: 50px; }
       div.map-tour-container div#location ul#location-bullets li {
         margin: 15px; }
+        div.map-tour-container div#location ul#location-bullets li a {
+          color: #4B4B4B; }
       div.map-tour-container div#location ul#location-bullets li::before {
         content: "■";
         color: #A73732;
@@ -130,6 +135,8 @@ div.map-tour-container {
     margin: 0px;
     width: 100%;
     border-right: none;
-    border-left: none; } }
+    border-left: none;
+    float: none;
+    margin: 25px 0px; } }
 
 /*# sourceMappingURL=style.css.map */

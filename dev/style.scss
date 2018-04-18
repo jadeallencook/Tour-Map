@@ -7,10 +7,11 @@ div.map-tour-container {
     height: 500px;
     border: solid thin grey;
     width: 350px;
-    margin: 25px;
+    margin: 25px 25px 25px 0px;
     position: relative;
     overflow-x: hidden;
     overflow-y: scroll;
+    float: left;
     div#loading {
         position: absolute;
         margin-top: 225px;
@@ -18,6 +19,7 @@ div.map-tour-container {
     }
     div#menu {
         display: none;
+        text-align: center;
         table#map {
             overflow: hidden;
             height: 151px;
@@ -80,6 +82,7 @@ div.map-tour-container {
     }
     div#location {
         display: none;
+        text-align: center;
         background-color: #E0E7EE;
         position: absolute;
         height: 100%;
@@ -118,6 +121,9 @@ div.map-tour-container {
             margin-bottom: 50px;
             li {
                 margin: 15px;
+                a {
+                    color: #4B4B4B;
+                }
             }
             li::before {
                 content: "■";
@@ -157,5 +163,7 @@ div.map-tour-container {
         width: 100%;
         border-right: none;
         border-left: none;
+        float: none;
+        margin: 25px 0px;
     }
 }

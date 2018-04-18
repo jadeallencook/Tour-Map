@@ -1,48 +1,40 @@
-<!DOCTYPE html>
-<html>
+<style>@charset "UTF-8";div.map-tour-container::-webkit-scrollbar {width: 0px;background: transparent;}div.map-tour-container {height: 500px;border: solid thin grey;width: 350px;margin: 25px 25px 25px 0px;position: relative;overflow-x: hidden;overflow-y: scroll;float: left;}div.map-tour-container div#loading {position: absolute;margin-top: 225px;width: 100%;}div.map-tour-container div#menu {display: none;text-align: center;}div.map-tour-container div#menu table#map {overflow: hidden;height: 151px;width: 300px;display: block;margin: 0px auto;}div.map-tour-container div#menu table#map * {vertical-align: top;margin: 0px;padding: 0px;}div.map-tour-container div#menu div#menu-footer {position: absolute;bottom: 5px;font-size: 0.5em;text-align: center;width: 100%;}div.map-tour-container div#menu div#menu-footer a {color: cornflowerblue;}div.map-tour-container div#menu img#main-map {margin-top: 25px;}div.map-tour-container div#menu div#locations-container {margin-top: 50px;}div.map-tour-container div#menu div#locations-container div.location-label {width: 35%;display: inline-block;border-bottom: none;padding: 5px 0px;font-weight: bold;font-size: 0.75em;cursor: pointer;white-space: nowrap;background-color: #E0E7EE;position: relative;color: #000;margin-bottom: 25px;}div.map-tour-container div#menu div#locations-container div.location-label:nth-child(odd) {margin-right: 25px;}div.map-tour-container div#menu div#locations-container div.location-label:after {content: "";position: absolute;left: 100%;top: 0px;width: 0px;height: 0px;border-top: 13px solid transparent;border-left: 15px solid #E0E7EE;border-bottom: 15px solid transparent;}div.map-tour-container div#menu div#locations-container div.location-label:hover {opacity: 0.5;}div.map-tour-container div#location {display: none;text-align: center;background-color: #E0E7EE;position: absolute;height: 100%;width: 100%;overflow-y: scroll;}div.map-tour-container div#location span#close {position: absolute;top: 5px;right: 10px;cursor: pointer;}div.map-tour-container div#location span#close:hover {opacity: 0.5;}div.map-tour-container div#location img#single-state {max-width: 85%;margin-top: 15px;max-height: 150px;}div.map-tour-container div#location span {display: block;}div.map-tour-container div#location span#state-label {font-size: 1.25em;font-weight: bold;margin-top: 15px;}div.map-tour-container div#location span#location-description {text-align: left;margin: 15px;}div.map-tour-container div#location ul#location-bullets {text-align: left;font-weight: bold;margin-left: 20px;margin-bottom: 50px;}div.map-tour-container div#location ul#location-bullets li {margin: 15px;}div.map-tour-container div#location ul#location-bullets li a {color: #4B4B4B;}div.map-tour-container div#location ul#location-bullets li::before {content: "■";color: #A73732;display: inline-block;width: 1em;margin-left: -1em;}div.map-tour-container div#location div#page-changer {width: 100%;position: absolute;bottom: 0px;background-color: #E0E7EE;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}div.map-tour-container div#location div#page-changer div {display: inline-block;cursor: pointer;margin: 0px 25px;padding: 5px 0px 5px 0px;}div.map-tour-container div#location div#page-changer div:hover {opacity: 0.5;}@media screen and (max-device-width: 480px) and (orientation: portrait) {div.map-tour-container {margin: 0px;width: 100%;border-right: none;border-left: none;float: none;margin: 25px 0px;}}</style>
 
-<head>
-    <title>Tour Map</title>
-    <style>@charset "UTF-8";html,body {margin: 0px;padding: 0px;overflow: hidden;}div.map-tour-container::-webkit-scrollbar {width: 0px;background: transparent;}div.map-tour-container {height: 500px;border: solid thin grey;width: 350px;margin: 25px;position: relative;overflow-x: hidden;overflow-y: scroll;}div.map-tour-container div#loading {position: absolute;margin-top: 225px;width: 100%;}div.map-tour-container div#menu {display: none;}div.map-tour-container div#menu table#map {overflow: hidden;height: 151px;width: 300px;display: block;margin: 0px auto;}div.map-tour-container div#menu table#map * {vertical-align: top;margin: 0px;padding: 0px;}div.map-tour-container div#menu div#menu-footer {position: absolute;bottom: 5px;font-size: 0.5em;text-align: center;width: 100%;}div.map-tour-container div#menu div#menu-footer a {color: cornflowerblue;}div.map-tour-container div#menu img#main-map {margin-top: 25px;}div.map-tour-container div#menu div#locations-container {margin-top: 50px;}div.map-tour-container div#menu div#locations-container div.location-label {width: 35%;display: inline-block;border-bottom: none;padding: 5px 0px;font-weight: bold;font-size: 0.75em;cursor: pointer;white-space: nowrap;background-color: #E0E7EE;position: relative;color: #000;margin-bottom: 25px;}div.map-tour-container div#menu div#locations-container div.location-label:nth-child(odd) {margin-right: 25px;}div.map-tour-container div#menu div#locations-container div.location-label:after {content: "";position: absolute;left: 100%;top: 0px;width: 0px;height: 0px;border-top: 13px solid transparent;border-left: 15px solid #E0E7EE;border-bottom: 15px solid transparent;}div.map-tour-container div#menu div#locations-container div.location-label:hover {opacity: 0.5;}div.map-tour-container div#location {display: none;background-color: #E0E7EE;position: absolute;height: 100%;width: 100%;overflow-y: scroll;}div.map-tour-container div#location span#close {position: absolute;top: 5px;right: 10px;cursor: pointer;}div.map-tour-container div#location span#close:hover {opacity: 0.5;}div.map-tour-container div#location img#single-state {max-width: 85%;margin-top: 15px;max-height: 150px;}div.map-tour-container div#location span {display: block;}div.map-tour-container div#location span#state-label {font-size: 1.25em;font-weight: bold;margin-top: 15px;}div.map-tour-container div#location span#location-description {text-align: left;margin: 15px;}div.map-tour-container div#location ul#location-bullets {text-align: left;font-weight: bold;margin-left: 20px;margin-bottom: 50px;}div.map-tour-container div#location ul#location-bullets li {margin: 15px;}div.map-tour-container div#location ul#location-bullets li::before {content: "■";color: #A73732;display: inline-block;width: 1em;margin-left: -1em;}div.map-tour-container div#location div#page-changer {width: 100%;position: absolute;bottom: 0px;background-color: #E0E7EE;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}div.map-tour-container div#location div#page-changer div {display: inline-block;cursor: pointer;margin: 0px 25px;padding: 5px 0px 5px 0px;}div.map-tour-container div#location div#page-changer div:hover {opacity: 0.5;}</style>
-    <link rel="stylesheet" href="https://www.deseretnews.com/v4/dist/app.css" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0" />
-</head>
-
-<body>
-    <div class="map-tour-container">
-        <div id="loading">Loading tour...</div>
-        <div id="menu">
-            <img src="images/map.png" id="main-map" usemap="#image-map" />
-            <map name="image-map">
-                <area data-num="7" alt="Honolulu, Hawaii" title="Honolulu, Hawaii" coords="15,77,9" shape="circle">
-                <area data-num="0" alt="London, United Kingdom" title="London, United Kingdom" coords="138,46,9" shape="circle">
-                <area data-num="1" alt="Jerusalem, Israel" title="Jerusalem, Israel" coords="168,69,10" shape="circle">
-                <area data-num="2" alt="Nairobi, Kenya" title="Nairobi, Kenya" coords="169,94,8" shape="circle">
-                <area data-num="3" alt="Harare, Zimbabwe" title="Harare, Zimbabwe" coords="166,110,8" shape="circle">
-                <area data-num="4" alt="Bengaluru, India" title="Bengaluru, India" coords="202,82,11" shape="circle">
-                <area data-num="5" alt="Bangkok, Thailand" title="Bangkok, Thailand" coords="220,84,8" shape="circle">
-                <area data-num="6" alt="Hong Kong" title="Hong Kong" coords="232,75,7" shape="circle">
-            </map>
-            <div id="locations-container"></div>
-            <div id="menu-footer">Developed by Jade Allen Cook for
-                <a href="http://www.deseretnews.com/">Deseret News</a>
-            </div>
-        </div>
-        <div id="location">
-            <span id="close">X</span>
-            <img src="" id="single-state" />
-            <span id="state-label"></span>
-            <span id="date-label"></span>
-            <span id="location-description"></span>
-            <ul id="location-bullets"></ul>
-            <div id="page-changer">
-                <div id="last">◀</div>
-                <div id="next">▶</div>
-            </div>
+<div class="map-tour-container">
+    <div id="loading">Loading tour...</div>
+    <div id="menu">
+        <img src="https://cdn.deseretnews.com/media/misc/interactive/global-ministry-tour/map-images/map.png" id="main-map" usemap="#image-map" />
+        <map name="image-map">
+            <area data-num="7" alt="Honolulu, Hawaii" title="Honolulu, Hawaii" coords="15,77,9" shape="circle">
+            <area data-num="0" alt="London, United Kingdom" title="London, United Kingdom" coords="138,46,9" shape="circle">
+            <area data-num="1" alt="Jerusalem, Israel" title="Jerusalem, Israel" coords="168,69,10" shape="circle">
+            <area data-num="2" alt="Nairobi, Kenya" title="Nairobi, Kenya" coords="169,94,8" shape="circle">
+            <area data-num="3" alt="Harare, Zimbabwe" title="Harare, Zimbabwe" coords="166,110,8" shape="circle">
+            <area data-num="4" alt="Bengaluru, India" title="Bengaluru, India" coords="202,82,11" shape="circle">
+            <area data-num="5" alt="Bangkok, Thailand" title="Bangkok, Thailand" coords="220,84,8" shape="circle">
+            <area data-num="6" alt="Hong Kong" title="Hong Kong" coords="232,75,7" shape="circle">
+        </map>
+        <div id="locations-container"></div>
+        <div id="menu-footer">Developed by Jade Allen Cook for
+            <a href="http://www.deseretnews.com/">Deseret News</a>
         </div>
     </div>
-</body>
+    <div id="location">
+        <span id="close">X</span>
+        <img src="" id="single-state" />
+        <span id="state-label"></span>
+        <span id="date-label"></span>
+        <span id="location-description"></span>
+        <ul id="location-bullets"></ul>
+        <div id="page-changer">
+            <div id="last">◀</div>
+            <div id="next">▶</div>
+        </div>
+    </div>
+</div>
+
 <script>(function () {
+ if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Article', window.location.href);
  var tour = null;
  var loading = {
  hide: function () {
@@ -60,7 +52,9 @@
  if (tour[x].state_abv.length > 0) elem.innerText += ', ' + tour[x].state_abv;
  elem.setAttribute('data-num', x);
  elem.onclick = function () {
- details.show(this.getAttribute('data-num'));
+ var num = parseInt(this.getAttribute('data-num'));
+ if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Location Label', tour[num].state_full);
+ details.show(num);
  }
  locations.appendChild(elem);
  }
@@ -71,12 +65,13 @@
  hide: function () {
  document.getElementById('menu').style.display = 'none';
  },
- map: function() {
+ map: function () {
  var areas = document.querySelectorAll('map area');
  for (var x = 0; x < areas.length; x++) {
  var area = areas[x];
- area.onclick = function() {
+ area.onclick = function () {
  var num = parseInt(this.getAttribute('data-num'));
+ if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Map Location', tour[num].state_full);
  details.show(num);
  }
  }
@@ -88,7 +83,9 @@
  num = parseInt(num);
  details.current = num;
  var location = tour[num];
+ document.getElementById('location').scrollTop = 0;
  document.getElementById('close').onclick = function () {
+ if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Navigation', 'Close');
  details.hide();
  menu.show();
  }
@@ -100,9 +97,21 @@
  var list = document.getElementById('location-bullets');
  list.innerHTML = null;
  for (var x = 0; x < location.bullets.length; x++) {
- var text = location.bullets[x];
+ var text = location.bullets[x].text;
  var bullet = document.createElement('li');
- bullet.innerText = text;
+ var href = location.bullets[x].link;
+ if (href) {
+ var link = document.createElement('a');
+ link.setAttribute('href', href);
+ link.setAttribute('target', '_blank');
+ link.innerText = text;
+ link.onclick = function() {
+ if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Bullet Link', text);
+ }
+ bullet.appendChild(link);
+ } else {
+ bullet.innerHTML = text;
+ }
  list.appendChild(bullet);
  }
  document.querySelector('div#location').onscroll = function (e) {
@@ -110,14 +119,24 @@
  document.getElementById('page-changer').style.bottom = scroll + 'px';
  }
  document.getElementById('next').onclick = function () {
- if (details.current < tour.length - 1) details.current++;
- else details.current = 0;
+ if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Navigation', 'Next');
+ if (details.current < tour.length - 1) {
+ details.current++;
  details.show(details.current);
+ } else {
+ details.hide();
+ menu.show();
+ }
  }
  document.getElementById('last').onclick = function () {
- if (details.current === 0) details.current = tour.length - 1;
- else details.current--;
+ if ('ga' in window) ga('send', 'event', 'Global Missionary Tour', 'Navigation', 'Previous');
+ if (details.current === 0) {
+ details.hide();
+ menu.show();
+ } else {
+ details.current--;
  details.show(details.current);
+ }
  }
  menu.hide();
  document.getElementById('location').style.display = 'block';
@@ -133,7 +152,7 @@
  if (tour) res();
  else rej();
  }
- request.open('get', 'tour.json');
+ request.open('get', 'https://www.deseretnews.com/media/misc/interactive/global-ministry-tour/map-data/global-ministry-tour.json');
  request.send();
  }).then(function () {
  menu.load();
@@ -144,5 +163,3 @@
  console.log('error');
  });
 })();</script>
-
-</html>
