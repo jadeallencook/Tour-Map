@@ -1,10 +1,4 @@
 @charset "UTF-8";
-html,
-body {
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden; }
-
 div.map-tour-container::-webkit-scrollbar {
   width: 0px;
   background: transparent; }
@@ -130,5 +124,12 @@ div.map-tour-container {
         padding: 5px 0px 5px 0px; }
       div.map-tour-container div#location div#page-changer div:hover {
         opacity: 0.5; }
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  div.map-tour-container {
+    margin: 0px;
+    width: 100%;
+    border-right: none;
+    border-left: none; } }
 
 /*# sourceMappingURL=style.css.map */

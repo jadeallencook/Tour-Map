@@ -29,11 +29,11 @@
         hide: function () {
             document.getElementById('menu').style.display = 'none';
         },
-        map: function() {
+        map: function () {
             var areas = document.querySelectorAll('map area');
             for (var x = 0; x < areas.length; x++) {
                 var area = areas[x];
-                area.onclick = function() {
+                area.onclick = function () {
                     var num = parseInt(this.getAttribute('data-num'));
                     details.show(num);
                 }
@@ -47,6 +47,7 @@
             num = parseInt(num);
             details.current = num;
             var location = tour[num];
+            document.getElementById('location').scrollTop = 0;
             document.getElementById('close').onclick = function () {
                 details.hide();
                 menu.show();
@@ -59,9 +60,18 @@
             var list = document.getElementById('location-bullets');
             list.innerHTML = null;
             for (var x = 0; x < location.bullets.length; x++) {
-                var text = location.bullets[x];
+                var text = location.bullets[x].text;
                 var bullet = document.createElement('li');
-                bullet.innerText = text;
+                var href = location.bullets[x].link;
+                if (href) {
+                    var link = document.createElement('a');
+                    link.setAttribute('href', href);
+                    link.setAttribute('target', '_blank');
+                    link.innerText = text;
+                    bullet.appendChild(link);
+                } else {
+                    bullet.innerHTML = text;
+                }
                 list.appendChild(bullet);
             }
             document.querySelector('div#location').onscroll = function (e) {
@@ -69,14 +79,22 @@
                 document.getElementById('page-changer').style.bottom = scroll + 'px';
             }
             document.getElementById('next').onclick = function () {
-                if (details.current < tour.length - 1) details.current++;
-                else details.current = 0;
-                details.show(details.current);
+                if (details.current < tour.length - 1) {
+                    details.current++;
+                    details.show(details.current);
+                } else {
+                    details.hide();
+                    menu.show();
+                }
             }
             document.getElementById('last').onclick = function () {
-                if (details.current === 0) details.current = tour.length - 1;
-                else details.current--;
-                details.show(details.current);
+                if (details.current === 0) {
+                    details.hide();
+                    menu.show();
+                } else {
+                    details.current--;
+                    details.show(details.current);
+                }
             }
             menu.hide();
             document.getElementById('location').style.display = 'block';
